@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.navBackgroundColor,
+.footerBackgroundColor,
+.buttonBackgroundColor {
+    background-color: rgba(2, 0, 36, 1);
+}
+
+.bodyBackgroundColor {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+        304deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(231, 0, 94, 1) 86%
+    );
+}

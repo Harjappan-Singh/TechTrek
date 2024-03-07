@@ -39,7 +39,7 @@ class PostsController extends Controller
             'intro_title'=> 'required', 
             'title'=> 'required', 
             'description'=> 'required',
-            'image'=> 'required|mimes:png,jpg,png'
+            'image'=> 'required'
         ]);
 
         $newImageName = uniqid() . '-' . $request->intro_title . '.' . $request->image->extension();

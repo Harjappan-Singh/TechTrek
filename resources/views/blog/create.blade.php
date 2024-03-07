@@ -24,7 +24,7 @@
 @endif
 
 <div class="w-4/5 m-auto pt-20">
-    <form action="/blog" method="POST" enctype="multipart/form-data">
+    <form id="myForm" action="/blog" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="text" id="intro_title" name="intro_title" placeholder="Intro Title..." class="bg-transparent block border-b-2 w-full h-20 text-6xl outline-none mb-8">
 
@@ -38,6 +38,8 @@
                 <input type="text" id="tag-input1" class="tag-input">
             </div>
         </div>
+
+        <input type="hidden" id="tags" name="tags">
 
         <div class="bg-gray-lighter mb-8">
             <label for="image" class="w-44 flex flex-col items-center px-2 py-3 bg-white rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer">
@@ -242,6 +244,20 @@ function updateHiddenInput(tagsArray) {
         });
         tagInput1.addData(['PHP' , 'JavaScript' , 'CSS'])
     
+    // Initialize the form
+    var form = document.getElementById('myForm');
+    form.addEventListener('submit', function(event) {
+        // Get the tags from the TagsInput instance
+        var tagsInput = document.getElementById('tag-input1').TagsInput;
+        var tags = tagsInput.getInputString();
+
+        // Update the value attribute of the input field with the current tags
+        document.getElementById('tag-input1').value = tags;
+        
+        // You can add any other form validation or submission logic here if needed
+        // For now, I'll just log the tags and submit the form
+        console.log('Tags:', tags);
+    });
 </script>
 
 <style>

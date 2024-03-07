@@ -43,13 +43,28 @@
                 <a href="/blog/{{ $post->slug }}" class="uppercase bg-gray-800 text-white text-xs font-bold py-3 px-5 rounded-full inline-block hover:bg-gray-700">Read More</a>
 
                  @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
-                <span class="float-right">
-                    <a 
-                        href="/blog/{{ $post->slug }}/edit"
-                        class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
-                        Edit
-                    </a>
-                </span>
+                    <span class="float-right">
+                        <a 
+                            href="/blog/{{ $post->slug }}/edit"
+                            class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
+                            Edit
+                        </a>
+                    </span>
+                    <span class="float-right">
+                        <form 
+                            action="/blog/{{ $post->slug }}"
+                            method="POST">
+                            @csrf
+                            @method('delete')
+
+                            <button
+                                class="text-red-500 pr-3"
+                                type="submit">
+                                Delete
+                            </button>
+
+                        </form>
+                    </span>
                  @endif
             </div>
     </div>

@@ -8,6 +8,11 @@ use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class PostsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
     /**
      * Display a listing of the resource.
      */
@@ -101,8 +106,12 @@ class PostsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($slug)
     {
-        //
+        $post = Post::where('slug', $slug);
+        $post->delete();
+
+        return redirect('/blog')
+            ->with('message', 'Your post has been deleted!');
     }
 }

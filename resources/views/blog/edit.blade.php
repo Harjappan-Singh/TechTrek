@@ -6,7 +6,7 @@
 <div class="w-4/5 m-auto text-center">
     <div class="py-15 border-b border-gray-200">
         <h1 class="py-10 text-4xl text-white">
-            Create Post
+            Update Post
         </h1>
     </div>
 </div>
@@ -24,36 +24,37 @@
 @endif
 
 <div class="w-4/5 m-auto pt-20">
-    <form id="myForm" action="/blog" method="POST" enctype="multipart/form-data">
+    <form action="/blog/{{ $post->slug }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <input type="text" id="intro_title" name="intro_title" placeholder="Intro Title..." class="bg-transparent block border-b-2 w-full h-20 text-6xl outline-none mb-8">
+        @method('PUT')
+        <input type="text" id="intro_title" name="intro_title"  value="{{ $post->intro_title }}" class="bg-transparent block border-b-2 w-full h-20 text-6xl outline-none mb-8">
 
-        <input type="text" id="title" name="title" placeholder="Title..." class="bg-transparent block border-b-2 w-full h-20 text-6xl outline-none mb-8">
+        <input type="text" id="title" name="title" value="{{ $post->title }}" class="bg-transparent block border-b-2 w-full h-20 text-6xl outline-none mb-8">
 
-        <textarea name="description" id="desc" placeholder="Description....." class="py-20 bg-transparent border-b-2 w-full h-60 text-xl outline-none mb-8"></textarea>
+        <textarea name="description" id="desc" placeholder="Description....." class="py-20 bg-transparent border-b-2 w-full h-60 text-xl outline-none mb-8">
+            {{ $post->description }}
+        </textarea>
 
-        <div class="flex flex-col mb-8">
+        {{-- <div class="flex flex-col mb-8">
             <label for="tag-input1" class="text-white mb-2">Tags Input</label>
             <div class="tags-input-wrapper">
                 <input type="text" id="tag-input1" class="tag-input">
             </div>
-        </div>
+        </div> --}}
 
-        <input type="hidden" id="tags" name="tags">
-
-        <div class="bg-gray-lighter mb-8">
+        {{-- <div class="bg-gray-lighter mb-8">
             <label for="image" class="w-44 flex flex-col items-center px-2 py-3 bg-white rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer">
                 <span class="mt-2 text-base leading-normal">
                     Select a file
                 </span>
                 <input type="file" name="image" id="image" class="hidden">
             </label>
-        </div>
+        </div> --}}
 
         <button    
             type="submit"
             class="uppercase mt-4 bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
-            Submit Post
+            Update Post
         </button>
     </form>
 </div>
@@ -244,20 +245,6 @@ function updateHiddenInput(tagsArray) {
         });
         tagInput1.addData(['PHP' , 'JavaScript' , 'CSS'])
     
-    // Initialize the form
-    var form = document.getElementById('myForm');
-    form.addEventListener('submit', function(event) {
-        // Get the tags from the TagsInput instance
-        var tagsInput = document.getElementById('tag-input1').TagsInput;
-        var tags = tagsInput.getInputString();
-
-        // Update the value attribute of the input field with the current tags
-        document.getElementById('tag-input1').value = tags;
-        
-        // You can add any other form validation or submission logic here if needed
-        // For now, I'll just log the tags and submit the form
-        console.log('Tags:', tags);
-    });
 </script>
 
 <style>

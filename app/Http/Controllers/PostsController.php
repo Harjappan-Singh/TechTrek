@@ -8,6 +8,11 @@ use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class PostsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
     /**
      * Display a listing of the resource.
      */
@@ -34,7 +39,7 @@ class PostsController extends Controller
             'intro_title'=> 'required', 
             'title'=> 'required', 
             'description'=> 'required',
-            'image'=> 'required|mimes:png,jpg,png'
+            'image'=> 'required'
         ]);
 
         $newImageName = uniqid() . '-' . $request->intro_title . '.' . $request->image->extension();
@@ -58,32 +63,55 @@ class PostsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $slug)
     {
-        //
+        return view('blog.show')
+            ->with('post', Post::where('slug', $slug)->first());
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $slug)
     {
-        //
+        return view('blog.edit')
+            ->with('post', Post::where('slug', $slug)->first());
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $slug)
     {
-        //
+          $request->validate([
+            'intro_title'=> 'required', 
+            'title'=> 'required', 
+            'description'=> 'required',
+        ]);
+
+        Post::where('slug', $slug)
+            ->update([
+                'intro_title' => $request->input('intro_title'),
+                'title' => $request->input('title'),
+                'description' => $request->input('description'),
+                'tags' => $request->input('tags'),
+                'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
+                'user_id' => auth()->user()->id
+            ]);
+
+        return redirect('/blog')
+            ->with('message', 'Your post has been updated!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($slug)
     {
-        //
+        $post = Post::where('slug', $slug);
+        $post->delete();
+
+        return redirect('/blog')
+            ->with('message', 'Your post has been deleted!');
     }
 }

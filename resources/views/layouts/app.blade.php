@@ -12,6 +12,8 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     
+    <link rel="shortcut icon" href="tech.jpeg" type="image/x-icon">
+    
     <!-- Styles -->
     {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"> --}}
     @vite('resources/css/app.css')

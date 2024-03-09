@@ -11,5 +11,7 @@ class PagesController extends Controller
         return view('index');
     }
 
-    // public function about(){} to create about page 
+    public function about(){
+        return view('about');
+    }
 }

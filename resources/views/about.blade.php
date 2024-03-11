@@ -4,7 +4,7 @@
 
 
     <div class=" w-4/5 mx-auto py-20 border-b border-gray-200 ">
-        <h1 class="text-4xl font-semibold text-white border-b border-gray-200">About TechTrek</h1>
+        <h1 class="text-4xl font-semibold text-white border-b border-gray-200 mb-5">About TechTrek</h1>
         <div class="py-5 flex mx-auto">
             <div class="basis-[60%] mr-10">
                 <p class="text-white mb-4 text-xl" >Established with a vision for revolutionizing the tech discourse, TechTrek emerged in 2020, founded by visionary <span class="font-semibold">Harjappan Singh</span>. What began as a digital haven for tech enthusiasts seeking the latest in consumer electronics news swiftly evolved into a global powerhouse of tech, entertainment, and science journalism.</p>
@@ -27,7 +27,7 @@
                 <p class="text-white my-10 text-xl">For press inquiries or to learn more about our editorial standards, please contact us [link to press inquiries page].</p>
 
                 <div class="flex flex-col items-center pt-20">
-                    <a href="mailto: d0023215@student.dkit.ie" class="bg-darkBlue hover:bg-[#0f088a] text-white font-bold px-40 py-5 rounded inline-flex items-center hover:animate-pulse" type="button" id="button-addon2">Contact Us</a>
+                    <a href="mailto: d0023215@student.dkit.ie" class="bg-darkBlue hover:bg-pink text-white font-bold px-40 py-5 rounded inline-flex items-center hover:animate-pulse" type="button" id="button-addon2">Contact Us</a>
                 </div>
                 
             </div>
@@ -127,10 +127,4 @@
             </div>
         </div>
     </div>
-
-    <div>
-        Youtube review of our website (Our Mission Statement)
-        {{-- Team members grid --}}
-    </div>
-
 @endsection

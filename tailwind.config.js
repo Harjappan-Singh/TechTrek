@@ -6,8 +6,16 @@ export default {
         "./resources/**/*.vue",
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                red: "#fff",
+                darkBlue: "#020024",
+                pink: "#e7005e",
+            },
+            fontFamily: {
+                sans: ["Ubuntu"],
+            },
+        },
     },
     plugins: [],
 };
-

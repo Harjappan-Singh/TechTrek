@@ -62,7 +62,7 @@
     
 
 
-    <div>
+    <div class="pb-[100px]">
         <section id="authors" class="p-5 bg-primary">
         <div class="container mx-auto">
             <h2 class="text-center text-white text-3xl font-bold mb-5">Our Bloggers</h2>

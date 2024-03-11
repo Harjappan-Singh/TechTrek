@@ -6,7 +6,7 @@
             <h2 class="text-4xl pb-2 text-white">TechTrek: Your Premier Destination for Cutting-Edge Tech Insights, Reviews, and Trends</h2>
             <div class="input-group mb-3">
                  <input type="text" class="border-gray-300 border rounded-lg py-2 px-4 w-80" placeholder="new upgrade in java" aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button class="buttonBackgroundColor hover:bg-blue-900 text-white font-bold py-2 px-4 rounded inline-flex items-center" type="button" id="button-addon2">Search</button>
+                <button class="bg-darkBlue hover:bg-blue-900 text-white font-bold py-2 px-4 rounded inline-flex items-center" type="button" id="button-addon2">Search</button>
                 <div class="suggestion mt-2">
                     <a class="text-white text-sm px-2" href="#">New update in ios</a>
                     <a class="text-white text-sm px-2" href="#">What's new in bootstrap</a>
@@ -73,19 +73,19 @@
             <div class="bg-white rounded-lg shadow-lg">
                 <div class="p-6 text-center">
                 <img src="https://randomuser.me/api/portraits/men/11.jpg" class="rounded-full w-24 h-24 mx-auto mb-4" alt="">
-                <h3 class="text-xl font-semibold mb-2">John Doe</h3>
+                <h3 class="text-xl font-semibold mb-2">Sebastian</h3>
                 <p class="text-gray-700 text-sm mb-4">
-                    John Doe is a seasoned blogger with over 5 years of experience in the industry. He specializes in writing insightful articles on technology, web development, and digital marketing. John's passion for writing and deep understanding of the subject matter make his blog posts both informative and engaging. In his free time, he enjoys experimenting with new blogging platforms, exploring different writing styles, and interacting with his readers through social media.
+                    Sebastian Gates is a seasoned blogger with over 5 years of experience in the industry. He specializes in writing insightful articles on technology, web development, and digital marketing. John's passion for writing and deep understanding of the subject matter make his blog posts both informative and engaging. In his free time, he enjoys experimenting with new blogging platforms, exploring different writing styles, and interacting with his readers through social media.
                 </p>
                 </div>
             </div>
 
             <div class="bg-white rounded-lg shadow-lg">
                 <div class="p-6 text-center">
-                <img src="https://randomuser.me/api/portraits/women/11.jpg" class="rounded-full w-24 h-24 mx-auto mb-4" alt="">
-                <h3 class="text-xl font-semibold mb-2">Jane Doe</h3>
+                <img src="https://randomuser.me/api/portraits/men/10.jpg" class="rounded-full w-24 h-24 mx-auto mb-4" alt="">
+                <h3 class="text-xl font-semibold mb-2">Derek</h3>
                 <p class="text-gray-700 text-sm mb-4">
-                    Jane Doe is a technology enthusiast and blogger with a passion for exploring the latest gadgets and innovations. She shares her insights, reviews, and recommendations on cutting-edge gadgets, software, and technology trends. Jane's engaging writing style and in-depth knowledge make her blog a go-to resource for tech enthusiasts seeking reliable information and reviews.
+                    Derek O'Riely is a technology enthusiast and blogger with a passion for exploring the latest gadgets and innovations. She shares her insights, reviews, and recommendations on cutting-edge gadgets, software, and technology trends. Jane's engaging writing style and in-depth knowledge make her blog a go-to resource for tech enthusiasts seeking reliable information and reviews.
                 </p>
                 </div>
             </div>
@@ -93,19 +93,19 @@
             <div class="bg-white rounded-lg shadow-lg">
                 <div class="p-6 text-center">
                 <img src="https://randomuser.me/api/portraits/men/12.jpg" class="rounded-full w-24 h-24 mx-auto mb-4" alt="">
-                <h3 class="text-xl font-semibold mb-2">Steve Smith</h3>
+                <h3 class="text-xl font-semibold mb-2">Dermot</h3>
                 <p class="text-gray-700 text-sm mb-4">
-                    Steve Smith is a passionate blogger specializing in gadgets and consumer electronics. With over 10 years of experience in reviewing and testing various gadgets, he provides in-depth analysis, hands-on reviews, and comparisons to help consumers make informed purchasing decisions. Steve's expertise and honest opinions make his blog a trusted source for gadget enthusiasts looking for reliable insights and recommendations.
+                    Dermot Logue is a passionate blogger specializing in gadgets and consumer electronics. With over 10 years of experience in reviewing and testing various gadgets, he provides in-depth analysis, hands-on reviews, and comparisons to help consumers make informed purchasing decisions. Steve's expertise and honest opinions make his blog a trusted source for gadget enthusiasts looking for reliable insights and recommendations.
                 </p>
                 </div>
             </div>
 
             <div class="bg-white rounded-lg shadow-lg">
                 <div class="p-6 text-center">
-                <img src="https://randomuser.me/api/portraits/women/12.jpg" class="rounded-full w-24 h-24 mx-auto mb-4" alt="">
-                <h3 class="text-xl font-semibold mb-2">Sara Smith</h3>
+                <img src="https://randomuser.me/api/portraits/men/13.jpg" class="rounded-full w-24 h-24 mx-auto mb-4" alt="">
+                <h3 class="text-xl font-semibold mb-2">Lance</h3>
                 <p class="text-gray-700 text-sm mb-4">
-                    Sara Smith is a software developer and blogger with a knack for demystifying complex technical concepts. With over 20 years of experience in software development, she shares her expertise through tutorials, tips, and insights on programming languages, frameworks, and best practices. Sara's clear explanations and practical advice make her blog an invaluable resource for aspiring and experienced software developers alike.
+                    Lance Gonsalves is a software developer and blogger with a knack for demystifying complex technical concepts. With over 20 years of experience in software development, she shares her expertise through tutorials, tips, and insights on programming languages, frameworks, and best practices. Sara's clear explanations and practical advice make her blog an invaluable resource for aspiring and experienced software developers alike.
                 </p>
                 </div>
             </div>

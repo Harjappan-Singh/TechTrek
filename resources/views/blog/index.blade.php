@@ -35,9 +35,12 @@
                         <div class="p-6">
                             By <span class="font-bold italic text-gray-800">{{ $post->user->name }}</span>, Created on {{ date('jS M Y', strtotime($post->updated_at)) }}
                             </span>
+                            <div>
+                                <span class="text-gray-500">{{ $post->tags }}</span>
+                            </div>
                             <span class="text-xs uppercase text-gray-500">{{ $post->short_title }}</span>
                             <h3 class="text-xl font-bold mt-2 mb-4">{{ $post->title }}</h3>
-                            <p class="text-gray-700 mb-4">{{ $post->description }}</p>
+                            <p class="text-gray-700 mb-4 truncate">{{ $post->description }}</p>
                             <a href="/blog/{{ $post->slug }}" class="uppercase bg-gray-800 text-white text-xs font-bold py-3 px-5 rounded-full inline-block hover:bg-gray-700">Read More</a>
                             @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
                             <span class="float-right">

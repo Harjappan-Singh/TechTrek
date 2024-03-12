@@ -4,9 +4,13 @@
 
 
     <div class=" w-4/5 mx-auto py-20 border-b border-gray-200 ">
+        <div class="flex items-end space-x-[700px]">
         <h1 class="text-4xl font-semibold text-white border-b border-gray-200 mb-5">About TechTrek</h1>
+        <img src="about.svg" alt="" class="w-[400px] pb-10">
+        </div>
+        
         <div class="py-5 flex mx-auto">
-            <div class="basis-[60%] mr-10">
+            <div class="basis-[60%] mr-[100px]">
                 <p class="text-white mb-4 text-xl" >Established with a vision for revolutionizing the tech discourse, TechTrek emerged in 2020, founded by visionary <span class="font-semibold">Harjappan Singh</span>. What began as a digital haven for tech enthusiasts seeking the latest in consumer electronics news swiftly evolved into a global powerhouse of tech, entertainment, and science journalism.</p>
 
                 <p class="text-white my-10 text-xl ">Today, TechTrek stands as a beacon of excellence, attracting millions of readers worldwide with its unparalleled coverage, exclusive previews of upcoming products, and in-depth analyses of industry trends. Our commitment to journalistic integrity and editorial excellence is unwavering, ensuring that every piece of content we produce meets the highest standards of accuracy and reliability.

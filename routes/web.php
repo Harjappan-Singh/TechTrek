@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\TagsController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PagesController;
@@ -24,6 +25,8 @@ use App\Http\Controllers\PostsController;
 Route::get('/', [PagesController::class, 'index']);
 
 Route::get('/about', [PagesController::class, 'about']);
+
+Route::resource('/tags', TagsController::class);
 
 Route::resource('/blog', PostsController::class);
 

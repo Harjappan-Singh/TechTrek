@@ -26,9 +26,9 @@ class PostsController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+     public function create()
     {
-        return view('blog.create')->with('tags', Tag::orderBy('name', 'ASC')->get());
+        return view('blog.create');
     }
 
     /**
@@ -55,7 +55,7 @@ class PostsController extends Controller
             'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
             'image_path' => $newImageName,
             'user_id' => auth()->user()->id
-        ])->attachTags($request->input('tags'));
+        ]);
 
         return redirect('/blog')
             ->with('message', 'Your post has been added!');

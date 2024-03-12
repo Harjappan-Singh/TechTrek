@@ -31,6 +31,9 @@
                     @foreach ($posts as $post)
                     <div class="bg-white rounded-lg shadow-md overflow-hidden">
                         <img src="{{ asset('images/' . $post->image_path) }}" alt="Post_Image" class="w-full h-64 object-cover">
+                        @foreach ( $post->tags()->get() as $tag) 
+                            <span class="mr-3 bg-gray-600 text-white rounded-full text-xs p-1 px-2 font-bold capitalize"><i class="bi bi-tag-fill mr-1"></i>{{ $tag->name }}</span>
+                        @endforeach
                             
                         <div class="p-6">
                             By <span class="font-bold italic text-gray-800">{{ $post->user->name }}</span>, Created on {{ date('jS M Y', strtotime($post->updated_at)) }}
@@ -40,7 +43,7 @@
                             </div>
                             <span class="text-xs uppercase text-gray-500">{{ $post->short_title }}</span>
                             <h3 class="text-xl font-bold mt-2 mb-4">{{ $post->title }}</h3>
-                            <p class="text-gray-700 mb-4 truncate">{{ $post->description }}</p>
+                            <p class="text-gray-700 mb-4">{!!  substr($post->description, 0, 250)  !!}...</p>
                             <a href="/blog/{{ $post->slug }}" class="uppercase bg-gray-800 text-white text-xs font-bold py-3 px-5 rounded-full inline-block hover:bg-gray-700">Read More</a>
                             @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
                             <span class="float-right">

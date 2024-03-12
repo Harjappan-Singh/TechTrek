@@ -130,4 +130,26 @@ class PostsController extends Controller
 
         return view('blog.tag_posts', $data);
     }
+
+    public function tagPostsBySearch(Request $request)
+    {
+        $userInput = $request->input('search');
+
+        // Use $userInput to filter posts or perform any other logic
+        $posts = Post::where('tags', 'like', '%' . $userInput . '%')->get();
+
+        if ($posts->isEmpty()) {
+            return abort(404);
+        }
+
+        $data = [
+            'pageTitle' => '#' . $userInput,
+            'posts' => $posts
+        ];
+
+        return view('blog.tag_posts', $data);
+    }
+
+
+
 }

@@ -4,13 +4,16 @@
     <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-20 border-b border-gray-200 ">
         <div class="m-auto sm:m-auto text-left w-4/5 block">
             <h2 class="text-4xl pb-2 text-white">TechTrek: Your Premier Destination for Cutting-Edge Tech Insights and Trends</h2>
-            <div class="input-group mb-3">
-                 <input type="text" class="border-gray-300 border rounded-lg py-2 px-4 w-80" placeholder="new upgrade in java" aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button class="bg-darkBlue hover:bg-blue-900 text-white font-bold py-2 px-4 rounded inline-flex items-center" type="button" id="button-addon2">Search</button>
+            <div class="input-group my-3">
+                <form action="{{ route('tag_posts_by_search') }}" method="GET">
+                    <input type="text" name="search" class="border-gray-300 border rounded-lg py-2 px-4 w-80" placeholder="Operating System" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button type="submit" class="bg-darkBlue hover:bg-blue-900 text-white font-bold mx-4 py-2 px-4 rounded inline-flex items-center" id="button-addon2">Search</button>
+                </form>
                 <div class="suggestion mt-2">
-                    <a class="text-white text-sm px-2" href="#">New update in ios</a>
-                    <a class="text-white text-sm px-2" href="#">What's new in bootstrap</a>
-                    <a class="text-white text-sm px-2" href="#">Why learn data science</a>         
+                    <a class="text-white text-sm px-2" href="{{ route('tag_posts', 'AI') }}">A I</a>
+                    <a class="text-white text-sm px-2" href="{{ route('tag_posts', 'Education') }}">Education</a>
+                    <a class="text-white text-sm px-2" href={{ route('tag_posts', 'Development') }}>Development</a>         
+                    <a class="text-white text-sm px-2" href={{ route('tag_posts', 'macOS') }}>MacOS</a>         
                 </div>
             </div>
         </div>

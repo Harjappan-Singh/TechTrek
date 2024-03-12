@@ -26,6 +26,8 @@ Route::get('/', [PagesController::class, 'index']);
 
 Route::get('/about', [PagesController::class, 'about']);
 
+Route::get('/contact', [PagesController::class, 'contact']);
+
 Route::get('/blog/tags/{tag}', [PostsController::class, 'tagPosts'])->name('tag_posts');
 
 Route::get('/blog/tags', [PostsController::class, 'tagPostsBySearch'])->name('tag_posts_by_search');

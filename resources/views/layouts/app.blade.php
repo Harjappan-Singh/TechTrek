@@ -31,7 +31,7 @@
                     <a class="no-underline" href="/">Home</a>
                     <a class="no-underline" href="/about">About</a>
                     <a class="no-underline" href="/blog">Blog</a>
-                    <a class="no-underline" href="/tags">Tags</a>
+                    <a class="no-underline" href="/contact">Contact</a>
                     @guest
                         <a class="no-underline" href="{{ route('login') }}">{{ __('Login') }}</a>
                         @if (Route::has('register'))

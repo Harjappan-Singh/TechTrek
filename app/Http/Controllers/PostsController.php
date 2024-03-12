@@ -115,4 +115,19 @@ class PostsController extends Controller
         return redirect('/blog')
             ->with('message', 'Your post has been deleted!');
     }
+
+    public function tagPosts(Request $request, $tag){
+        $posts = Post::where('tags', 'like', '%' . $tag . '%')->get();
+
+        if(!$posts){
+            return abort(404);
+        }
+
+        $data = [
+            'pageTitle' => '#' . $tag,
+            'posts' => $posts
+        ];
+
+        return view('blog.tag_posts', $data);
+    }
 }

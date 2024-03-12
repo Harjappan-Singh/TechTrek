@@ -26,7 +26,8 @@ Route::get('/', [PagesController::class, 'index']);
 
 Route::get('/about', [PagesController::class, 'about']);
 
-Route::resource('/tags', TagsController::class);
+Route::get('/blog/tags/{tag}', [PostsController::class, 'tagPosts'])->name('tag_posts');
+
 
 Route::resource('/blog', PostsController::class);
 

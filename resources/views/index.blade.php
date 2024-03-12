@@ -28,36 +28,64 @@
             <div class="container mx-auto">
                 <h2 class="text-3xl font-bold text-center mb-8">Featured Posts</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                    @foreach ($posts as $post)
                     <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <img src="https://developer.apple.com/news/images/og/ios-17-og.jpg" alt="Featured Post Image" class="w-full h-64 object-cover">
+                        <img src="{{ asset('images/' . $post->image_path) }}" alt="Post_Image" class="w-full h-64 object-cover">
+                        
+                            
                         <div class="p-6">
-                            <span class="text-xs uppercase text-gray-500">New Upgrade of iOS 17</span>
-                            <h3 class="text-xl font-bold mt-2 mb-4">Exciting New Features Coming to iOS 17</h3>
-                            <p class="text-gray-700 mb-4">The upcoming release of iOS 17 promises to bring a host of new features and improvements. From enhanced privacy controls to innovative augmented reality experiences, users can expect a seamless and intuitive mobile experience. Stay tuned for updates and insights as we explore what's in store with iOS 17.</p>
-                            <a href="#" class="uppercase bg-gray-800 text-white text-xs font-bold py-2 px-4 rounded-full inline-block hover:bg-gray-700">Read More</a>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <img src="https://d1m75rqqgidzqn.cloudfront.net/wp-data/2019/09/11134058/What-is-data-science-2.jpg" alt="Featured Post Image" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <span class="text-xs uppercase text-gray-500">Why Learn Data Science</span>
-                            <h3 class="text-xl font-bold mt-2 mb-4">Exploring the Importance of Data Science in Today's World</h3>
-                            <p class="text-gray-700 mb-4">In an era defined by data-driven decision-making, understanding data science has become increasingly crucial. From unlocking valuable insights to driving innovation, data science empowers organizations to make informed choices and stay ahead of the competition. Discover the significance of data science and why it's a skill worth mastering.</p>
-                            <a href="#" class="uppercase bg-gray-800 text-white text-xs font-bold py-2 px-4 rounded-full inline-block hover:bg-gray-700">Read More</a>
-                        </div>
-                    </div>
+                            By <span class="font-bold italic text-gray-800">{{ $post->user->name }}</span>, Created on {{ date('jS M Y', strtotime($post->updated_at)) }}
+                            </span>
+                            @if($post->tags)
+                            @php
+                                $tagsString = $post->tags;
+                                $tagsArray = explode(',', $tagsString);
+                            @endphp
+                            <div class="tagsContainer">
+                               <div class="flex flex-wrap">
+                                    @foreach ($tagsArray as $tag)
+                                        <span class="p-1 m-2 bg-pink rounded  text-white">
+                                            <a href="{{ route('tag_posts', $tag) }}" class="">{{$tag }}</a>
+                                        </span>
+                                            
+                                        
+                                    @endforeach
+                               </div>
+                                {{-- <span class="text-gray-500">{{ $post->tags }}</span> --}}
+                            </div>
+                            @endif
 
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <img src="https://www.reuters.com/resizer/k22lkKGnpjGFn8fczL9GQI2LCjI=/1920x0/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/FWTM5XJBSNJ4RLHS433A2ZMPFM.jpg" alt="Featured Post Image" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <span class="text-xs uppercase text-gray-500">Instagram Servers Hang</span>
-                            <h3 class="text-xl font-bold mt-2 mb-4">Investigating the Recent Instagram Server Outage</h3>
-                            <p class="text-gray-700 mb-4">Millions of users were left frustrated as Instagram experienced a widespread server outage. From businesses relying on social media marketing to individuals sharing their daily lives, the outage had far-reaching implications. Join us as we delve into the causes behind the outage and explore its impact on the digital landscape.</p>
-                            <a href="#" class="uppercase bg-gray-800 text-white text-xs font-bold py-2 px-4 rounded-full inline-block hover:bg-gray-700">Read More</a>
+                            <span class="text-xs uppercase text-gray-500">{{ $post->short_title }}</span>
+                            <h3 class="text-xl font-bold mt-2 mb-4">{{ $post->title }}</h3>
+                            <p class="text-gray-700 mb-4">{!!  substr($post->description, 0, 250)  !!}...</p>
+                            <a href="/blog/{{ $post->slug }}" class="uppercase bg-gray-800 text-white text-xs font-bold py-3 px-5 rounded-full inline-block hover:bg-gray-700">Read More</a>
+                            @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
+                            <span class="float-right">
+                                <a 
+                                    href="/blog/{{ $post->slug }}/edit"
+                                    class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
+                                    Edit
+                                </a>
+                            </span>
+                            <span class="float-right">
+                                <form 
+                                    action="/blog/{{ $post->slug }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('delete')
+
+                                    <button
+                                        class="text-red-500 pr-3"
+                                        type="submit">
+                                        Delete
+                                    </button>
+
+                                </form>
+                            </span>
+                        @endif
                         </div>
-                    </div>
-                </div>
+                    </div>  
+                    @endforeach
 
             </div>
         </section>

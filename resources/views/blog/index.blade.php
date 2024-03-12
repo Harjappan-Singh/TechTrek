@@ -45,7 +45,7 @@
                                <div class="flex flex-wrap">
                                     @foreach ($tagsArray as $tag)
                                         <span class="p-1 m-2 bg-pink rounded  text-white">
-                                            <a href="{{ route('tag_posts', $tag) }}" class="">#{{$tag }}</a>
+                                            <a href="{{ route('tag_posts', $tag) }}" class="">{{$tag }}</a>
                                         </span>
                                             
                                         

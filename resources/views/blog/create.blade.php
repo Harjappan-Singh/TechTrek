@@ -259,4 +259,4 @@ function updateHiddenInput(tagsArray) {
 
 @endsection
 
-// reference to add tags - https://codepen.io/iamqamarali/pen/qyawoR
+{{-- // reference to add tags - https://codepen.io/iamqamarali/pen/qyawoR --}}

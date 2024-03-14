@@ -3,6 +3,16 @@
 "Your Premier Destination for Cutting-Edge Tech Insights and Trends"
 
 ## About TechTrek
+<img width="1470" alt="Screenshot 2024-03-14 at 9 01 01 AM" src="https://github.com/Harjappan-Singh/TechTrek/assets/105536922/08865fc6-741f-4ea1-bb6d-c285c884fcbc">
+<img width="1470" alt="Screenshot 2024-03-14 at 9 01 41 AM" src="https://github.com/Harjappan-Singh/TechTrek/assets/105536922/28def0f4-0887-4431-84c7-d6ef0ff1a64c">
+<img width="1470" alt="Screenshot 2024-03-14 at 9 01 55 AM" src="https://github.com/Harjappan-Singh/TechTrek/assets/105536922/7788b173-02f7-46d2-b09e-12c740ccc217">
+<img width="1470" alt="Screenshot 2024-03-14 at 9 02 23 AM" src="https://github.com/Harjappan-Singh/TechTrek/assets/105536922/d5595735-544e-442e-b9da-5759b27c9442">
+<img width="1470" alt="Screenshot 2024-03-14 at 9 02 45 AM 1" src="https://github.com/Harjappan-Singh/TechTrek/assets/105536922/47b4997c-a957-4fa6-b9d4-53c2ca59c599">
+<img width="1466" alt="Screenshot 2024-03-14 at 9 03 03 AM" src="https://github.com/Harjappan-Singh/TechTrek/assets/105536922/09c64e71-5263-4045-8916-18b80af8f98f">
+<img width="1470" alt="Screenshot 2024-03-14 at 9 03 18 AM" src="https://github.com/Harjappan-Singh/TechTrek/assets/105536922/08439901-e7fa-41bd-8c4f-f8e2576b8598">
+<img width="1440" alt="Screenshot 2024-03-14 at 9 03 57 AM" src="https://github.com/Harjappan-Singh/TechTrek/assets/105536922/f54cac91-8109-4782-be61-9888b649baca">
+<img width="1450" alt="Screenshot 2024-03-14 at 9 04 31 AM" src="https://github.com/Harjappan-Singh/TechTrek/assets/105536922/d60b8c88-473f-420e-9ffc-7d579aede48e">
+<img width="1449" alt="Screenshot 2024-03-14 at 9 05 25 AM" src="https://github.com/Harjappan-Singh/TechTrek/assets/105536922/28f3ebbc-c3b1-4fef-9291-65dd5bdac593">
 
 
 ##Authors:

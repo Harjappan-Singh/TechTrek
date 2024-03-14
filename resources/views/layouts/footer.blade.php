@@ -17,6 +17,16 @@
                     </a>
                 </li>
                 <li class="pb-1">
+                    <a href="/about">
+                        About Us
+                    </a>
+                </li>
+                <li class="pb-1">
+                    <a href="/contact">
+                        Contact Us
+                    </a>
+                </li>
+                <li class="pb-1">
                     <a href="/login">
                         Login
                     </a>
@@ -41,18 +51,13 @@
                     </a>
                 </li>
                 <li class="pb-1">
-                    <a href="/">
-                        Address
+                    <a href="/about">
+                        About Us
                     </a>
                 </li>
                 <li class="pb-1">
-                    <a href="/">
-                        Phone
-                    </a>
-                </li>
-                <li class="pb-1">
-                    <a href="/">
-                        Contact
+                    <a href="/contact">
+                        Contact Us
                     </a>
                 </li>
             </ul>
@@ -65,23 +70,23 @@
 
             <ul class="py-4 sm:text-s pt-4 text-gray-400">
                 <li class="pb-1">
-                    <a href="/">
-                        New Update in ios 17
+                    <a href="blog/the-art-of-software-testing-ensuring-quality-from-concept-to-release">
+                        The Art of Software Testing: Ensuring Quality from Concept to Release
                     </a>
                 </li>
                 <li class="pb-1">
-                    <a href="/">
-                        Why should you learn data science
+                    <a href="blog/android-13-next-gen-mobile-experience">
+                        Android 13: Next-Gen Mobile Experience
                     </a>
                 </li>
                 <li class="pb-1">
-                    <a href="/">
-                        Meta servers mess
+                    <a href="/blog/docker-containers-simplifying-devops">
+                        Docker Containers: Simplifying DevOps
                     </a>
                 </li>
                 <li class="pb-1">
-                    <a href="/">
-                        Why not laravel
+                    <a href="/blog/windows-11-a-new-era-in-desktop-computing">
+                        Windows 11: A New Era in Desktop Computing
                     </a>
                 </li>
             </ul>

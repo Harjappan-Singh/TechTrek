@@ -7,7 +7,7 @@
         <div class="flex flex-col">
             <div class="flex justify-between flex-col mt-[80px] space-y-4">
             <h2 class="text-4xl text-white tracking-wide font-bold p-8 my-4">Contact Us</h2>
-            <p class="text-white pt-2 my-[40px]">Should you have any feedback or queries, please feel free to reach out to us without hesitation.</p>
+            <p class="text-white pt-2 my-[40px] mb-4 text-xl">Should you have any feedback or queries, please feel free to reach out to us without hesitation.</p>
             </div>
             
 

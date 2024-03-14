@@ -19,9 +19,9 @@
 @endif
 
 @if (Auth::check())
-    <div class="pt-15 w-4/5 m-auto">
-        <a href="/blog/create" class="uppercase bg-gray-800 text-white text-xs font-bold py-3 px-5 rounded-full inline-block hover:bg-gray-700">Create Post</a>
-    </div>
+    <div class="flex justify-center pt-5 pb-10">
+        <a href="/blog/create" class="bg-pink text-gray-100 text-lg font-semibold py-3 px-8 rounded-lg  focus:outline-none focus:bg-darkBlue">Create Post</a>
+        </div>
     
 @endif
      <div>
@@ -42,12 +42,15 @@
                                 $tagsArray = explode(',', $tagsString);
                             @endphp
                             <div class="tagsContainer">
-                                <ul>
+                               <div class="flex flex-wrap">
                                     @foreach ($tagsArray as $tag)
-                                        <li><a href="{{ route('tag_posts', $tag) }}">#{{$tag }}</a></li>
+                                        <span class="p-1 m-2 bg-pink rounded  text-white">
+                                            <a href="{{ route('tag_posts', $tag) }}" class="">{{$tag }}</a>
+                                        </span>
+                                            
+                                        
                                     @endforeach
-                                </ul>
-                                {{-- <span class="text-gray-500">{{ $post->tags }}</span> --}}
+                               </div>
                             </div>
                             @endif
 

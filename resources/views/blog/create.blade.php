@@ -4,39 +4,39 @@
 @section('content')
 
 <div class="w-4/5 m-auto text-center">
-    <div class="py-15 border-b border-gray-200">
-        <h1 class="py-10 text-4xl text-white">
+    <div class="py-10 border-b border-gray-200">
+        <h1 class="text-4xl text-white">
             Create Post
         </h1>
     </div>
 </div>
 
 @if ($errors->any())
-    <div class="w-4/5 m-auto">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li class="w-1/5 mb-4 text-gray-50 bg-red-700 rounded-2xl py-4">
-                    {{ $error }}
-                </li>
-            @endforeach
-        </ul>
+    <div class="w-4/5 m-auto mt-8">
+        <div class="bg-red-200 text-red-700 px-4 py-3 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-2">Oops! Something went wrong.</h2>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li class="mb-1">{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
     </div>
 @endif
 
-<div class="w-4/5 m-auto pt-20">
+<div class="w-4/5 m-auto pt-10">
     <form id="myForm" action="/blog" method="POST" enctype="multipart/form-data">
         @csrf
-        <input type="text" id="intro_title" name="intro_title" placeholder="Intro Title..." class="bg-transparent block border-b-2 w-full h-20 text-6xl outline-none mb-8">
+        <input type="text" id="intro_title" name="intro_title" placeholder="Intro Title..." class="bg-gray-200 block border-b-2 w-full h-12 text-xl outline-none mb-6 px-4 rounded-lg focus:border-blue-500">
 
-        <input type="text" id="title" name="title" placeholder="Title..." class="bg-transparent block border-b-2 w-full h-20 text-6xl outline-none mb-8">
+        <input type="text" id="title" name="title" placeholder="Title..." class="bg-gray-200 block border-b-2 w-full h-12 text-xl outline-none mb-6 px-4 rounded-lg focus:border-blue-500">
 
-        <textarea name="description" id="desc" placeholder="Description....." class="py-20 bg-transparent border-b-2 w-full h-60 text-xl outline-none mb-8"></textarea>
+        <textarea name="description" id="desc" placeholder="Description....." class="bg-gray-200 py-4 px-4 w-full h-60 text-lg outline-none mb-6 rounded-lg focus:border-blue-500"></textarea>
 
-       
         <div class="flex flex-col mb-8">
             <label for="tag-input1" class="text-white mb-2">Tags Input</label>
             <div class="tags-input-wrapper">
-                <input type="text" id="tag-input1" class="tag-input">
+                <input type="text" id="tag-input1" class="tag-input bg-gray-200 border-b-2 w-full h-12 text-lg outline-none mb-2 px-4 rounded-lg focus:border-blue-500 ">
             </div>
         </div>
 
@@ -51,13 +51,14 @@
             </label>
         </div>
 
-        <button    
-            type="submit"
-            class="uppercase mt-4 bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
-            Submit Post
-        </button>
+        <div class="flex justify-center pt-5 pb-10">
+            <button type="submit" class="uppercase bg-pink text-gray-100 text-lg font-semibold py-3 px-8 rounded-lg hover:bg-darkBlue focus:outline-none focus:bg-darkBlue">
+                Create Post
+            </button>
+        </div>
     </form>
 </div>
+
 <script>
     (function(){
     "use strict"
@@ -237,6 +238,7 @@ function updateHiddenInput(tagsArray) {
     outline: none;
     width: 140px;
     margin-left: 8px;
+    color: white
 }
 .tags-input-wrapper .tag{
     display: inline-block;

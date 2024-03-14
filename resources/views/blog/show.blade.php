@@ -1,26 +1,41 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="w-4/5 m-auto text-left">
-    <div class="py-15">
-        <h1 class="text-6xl">
-            {{ $post->title }}
-        </h1>
+<div class="w-full max-w-4xl mx-auto px-6">
+    <div class="py-10">
+        <h1 class="text-4xl font-bold text-white">{{ $post->title }}</h1>
     </div>
-</div>
 
     <div>
-        <img src="{{ asset('images/' . $post->image_path) }}" alt="Featured Post Image" class="w-full h-80 object-cover pt-10">
+        <img src="{{ asset('images/' . $post->image_path) }}" alt="Featured Post Image" class="w-full h-auto object-cover">
     </div>
 
-<div class="w-4/5 m-auto pt-20">
-    <span class="text-gray-500">
-        By <span class="font-bold italic text-gray-800">{{ $post->user->name }}</span>, Created on {{ date('jS M Y', strtotime($post->updated_at)) }}
-    </span>
+    <div class="mt-10">
+        <p class="text-gray-200">
+            By <span class="font-semibold">{{ $post->user->name }}</span>, Created on {{ date('jS M Y', strtotime($post->updated_at)) }}
+        </p>
+    </div>
 
-    <p class="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">
-        {{ $post->description }}
-    </p>
+    @if($post->tags)
+                            @php
+                                $tagsString = $post->tags;
+                                $tagsArray = explode(',', $tagsString);
+                            @endphp
+                            <div class="tagsContainer">
+                               <div class="flex flex-wrap">
+                                    @foreach ($tagsArray as $tag)
+                                        <span class="p-1 m-2 bg-pink rounded  text-white">
+                                            <a href="{{ route('tag_posts', $tag) }}" class="">{{$tag }}</a>
+                                        </span>
+                                            
+                                        
+                                    @endforeach
+                               </div>
+                            </div>
+                            @endif
+
+    <div class="mt-8">
+        <p class="text-lg leading-7 text-white">{{ $post->description }}</p>
+    </div>
 </div>
-
-@endsection 
+@endsection
